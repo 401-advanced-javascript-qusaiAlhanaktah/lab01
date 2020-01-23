@@ -19,30 +19,26 @@ describe('validator module performs basic validation of', () => {
     expect(validator.isString(item)).toBeTruthy();
       }else{expect(validator.isString(item)).toBeFalsy()};
    }) 
-    // expect(validator.isString(arr)).toBeFalsy();
-    // expect(validator.isString(obj)).toBeFalsy();
-    // expect(validator.isString(func)).toBeFalsy();
-    // expect(validator.isString(bool)).toBeFalsy();
   });
 
   it('numbers', () => {
-    expect(validator.isNumber).toBeTruthy();
+    expect(validator.isNumber(num)).toBeTruthy();
   });
 
   it('arrays', () => {
-    expect(validator.isArr).toBeTruthy();
+    expect(validator.isArray(arr)).toBeTruthy();
   });
 
   it('objects', () => {
-    expect(validator.isObj).toBeTruthy();
+    expect(validator.isObj(obj)).toBeTruthy();
   });
 
   it('booleans', () => {
-    expect(validator.isBoolean).toBeTruthy();
+    expect(validator.isBoolean(bool)).toBeTruthy();
   });
 
   it('functions', () => {
-    expect(validator.isFunc).toBeTruthy();
+    expect(validator.isFunc(func)).toBeTruthy();
   });
 
 });
@@ -64,7 +60,7 @@ describe('validator module performs complex validations', () => {
   it('validates the proper types of object properties', () => {
     // i.e. person.name must be a string, etc.
     expect(typeof(cat.name)).toStrictEqual('string');
-    expect(cat.name).toStrictEqual('Abu-assel');
+    expect(cat.name).toMatch('Abu-assel');
   });
 
   it('validates the types of values contained in an array', () => {
